@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* Premium modern styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4ff, #d9e2ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 420px;
+            width: 90%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        form div {
+            margin-bottom: 0.75rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.25rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .gender {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        input,
+        select {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            transition: border-color .3s;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #667eea;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .3s;
+        }
+
+        button:hover {
+            background: #5a67d8;
+        }
+
+        .error {
+            color: #e53e3e;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
+        #message {
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                max-width: 360px;
+            }
+
+            input,
+            select,
+            button {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+                max-width: 320px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            input,
+            select,
+            button {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .container {
+                padding: 0.8rem;
+            }
+
+            button {
+                padding: 0.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form id="registrationForm" novalidate>
+            <div>
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+            </div>
+            <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            <div>
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" required placeholder="Enter your phone number" />
+            </div>
+            <div>
+                <label>Gender</label>
+                <div class="gender">
+                    <input type="radio" id="genderMale" name="gender" value="Male">
+                    <label for="genderMale">Male</label>
+                    <input type="radio" id="genderFemale" name="gender" value="Female">
+                    <label for="genderFemale">Female</label>
+                    <input type="radio" id="genderOther" name="gender" value="Other">
+                    <label for="genderOther">Other</label>
+                </div>
+            </div>
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div>
+                <label for="course">Course of Study</label>
+                <select id="course" name="course" required>
+                    <option value="">Select...</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                </select>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
